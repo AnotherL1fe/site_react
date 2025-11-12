@@ -1,22 +1,22 @@
-import React from 'react';
-import logo from "../../assets/logo.png"; 
-import './style.module.css'; 
+import { useState } from "react";
+import style from "./style.module.css";
+
+import tgIcon from "../../assets/telegram-icon.png";
+
 
 const Header = () => {
     return (
-        <header>
-            <div className='logoBox'>
-                <img src={logo} alt="logo" />
+        <header className={style.header}>
+            <div className={style.headerContent}>
+                {/* Центральная - кнопка телеграм */}
+                <div className={style.rightSection}>
+                    <button className={style.tgButton}>
+                        {/* Иконка телеграма */}
+                        <img src={tgIcon} alt="Telegram" className={style.tgIcon} />
+                        <span className={style.tgText}>наш tg-канал</span>
+                    </button>
+                </div>
             </div>
-            <div>
-                <h1>DodepCounter.com</h1>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="/">Главная</a></li>
-                    <li><a href="/about">О Нас</a></li>
-                </ul>
-            </nav>
         </header>
     );
 };

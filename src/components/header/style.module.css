@@ -1,50 +1,90 @@
-header {
-    background-color: #333;
-    color: white;
-    padding: 10px 20px;
+.header {
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.headerContent {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    height: 40px;
-    /* width: 500px; */
     justify-content: center;
-    gap: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-header img {
-    height: 40px;
-    border: 4em;
-    border-radius: 10px;
-}
-
-.logoBox {
-    height: 40px;
-    border: 4em;
-    border-radius: 10px;
-}
-
-header h1 {
-    font-size: 20px;
-    margin: 0;
-}
-
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+/* Правая часть - телеграм кнопка */
+.rightSection {
     display: flex;
-    gap: 50px;
+    justify-content: center;
 }
 
-nav ul li {
-    gap: 50px;
+.tgButton {
+    background: #ffffff;
+    color: rgb(0, 0, 0);
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid #000000;
+    border-radius: 30px;
 }
 
-nav ul li a {
-    color: white;
-    text-decoration: none;
+.tgButton:hover {
+    background: #378bb6;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 136, 204, 0.4);
 }
 
-nav ul li a:hover {
-    text-decoration: underline;
+.tgIcon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}
+
+.tgText {
+    font-size: 1rem;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .headerContent {
+        padding: 0 15px;
+    }
+
+    .tgButton {
+        padding: 0px 10px 0px 0px;
+        font-size: 0.95rem;
+    }
+
+    .tgIcon {
+        width: 42px;
+        height: 42px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 12px 0;
+    }
+
+    .tgButton {
+        padding: 10px 18px;
+        font-size: 0.9rem;
+        gap: 8px;
+    }
+
+    .tgIcon {
+        width: 16px;
+        height: 16px;
+    }
 }
