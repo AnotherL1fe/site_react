@@ -403,3 +403,99 @@
     width: 15px;
   }
 }
+
+/* Стили для поиска */
+.searchSection {
+  margin-bottom: 30px;
+}
+
+.searchContainer {
+  position: relative;
+  /* max-width: 500px; */
+  margin: 0 auto;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 15px 50px 15px 20px;
+  border: 2px solid #e0e0e0;
+  border-radius: 25px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: #000000;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.2);
+}
+
+.searchInput::placeholder {
+  color: #999;
+}
+
+.searchIcon {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  color: #666;
+  pointer-events: none;
+}
+
+.clearButton {
+  position: absolute;
+  right: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #999;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.clearButton:hover {
+  background: #f0f0f0;
+  color: #666;
+}
+
+.searchResults {
+  text-align: center;
+  margin-top: 10px;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* Адаптивность для поиска */
+@media (max-width: 768px) {
+  .searchContainer {
+    max-width: 100%;
+    padding: 0 15px;
+  }
+
+  .searchInput {
+    padding: 12px 45px 12px 15px;
+    font-size: 0.9rem;
+  }
+
+  .searchIcon {
+    right: 15px;
+    font-size: 1.1rem;
+  }
+
+  .clearButton {
+    right: 40px;
+    font-size: 1.3rem;
+  }
+}

@@ -1,31 +1,47 @@
 import { useState } from "react";
-import style from "./style.module.css"
+import style from "./style.module.css";
 
-const Search = ({ addTask }) => {
-    const [userInput, setUserInput] = useState("");
+const Search = ({ onSearch, productsCount }) => {
+    const [searchQuery, setSearchQuery] = useState("");
 
-    const handleChange = (e) => {
-        setUserInput(e.target.value);
-    }
+    const handleSearchChange = (e) => {
+        const value = e.target.value;
+        setSearchQuery(value);
+        onSearch(value);
+    };
 
-    const submit = (e) => {
-        e.preventDefault();
+    const clearSearch = () => {
+        setSearchQuery("");
+        onSearch("");
+    };
 
-        addTask(userInput.trim(), taskDate);
-        setUserInput("");
-        setTaskDate("");
-    }
+    return (
+        <div className={style.searchSection}>
+            <div className={style.searchContainer}>
+                <input
+                    type="text"
+                    placeholder="Поиск товаров..."
+                    value={searchQuery}
+                    onChange={handleSearchChange}
+                    className={style.searchInput}
+                />
+                {searchQuery && (
+                    <button 
+                        onClick={clearSearch}
+                        className={style.clearButton}
+                        title="Очистить поиск"
+                    >
+                        ×
+                    </button>
+                )}
+            </div>
+            {searchQuery && (
+                <div className={style.searchResults}>
+                    Найдено товаров: {productsCount}
+                </div>
+            )}
+        </div>
+    );
+};
 
-    return <form action="" onSubmit={submit}>
-        <input
-            type="search"
-            placeholder="Найти товары"
-            value={userInput}
-            onChange={handleChange}
-        />
-        {/* <input type="submit" value="Search" /> */}
-    </form>
-
-}
-
-export default Search
+export default Search;
