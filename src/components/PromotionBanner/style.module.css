@@ -1,0 +1,405 @@
+.body {
+    font-family: 'Arial', sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Стили для промо-баннера */
+.promotionBanner {
+    background: linear-gradient(135deg, #000000 30%, #ffffff 100%);
+    color: white;
+    padding: 40px 30px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.bannerContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.bannerText {
+    flex: 1;
+    min-width: 300px;
+}
+
+.bannerTitle {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.bannerSubtitle {
+    font-size: 1.1rem;
+    margin: 0;
+    opacity: 0.9;
+    font-weight: 400;
+}
+
+.detailsButton {
+    background: #ffffff;
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 15px 35px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(255, 107, 107, 0.3);
+    white-space: nowrap;
+}
+
+.detailsButton:hover {
+    background: #000000;
+    color: rgb(255, 255, 255);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(255, 107, 107, 0.4);
+}
+
+/* Стили для скроллируемого каталога */
+.catalogSection {
+    margin-bottom: 40px;
+}
+
+.catalogContainer {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+}
+
+.catalogContainer::before,
+.catalogContainer::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 30px;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.catalogContainer::before {
+    left: 0;
+    background: linear-gradient(to right, white, transparent);
+}
+
+.catalogContainer::after {
+    right: 0;
+    background: linear-gradient(to left, white, transparent);
+}
+
+.catalogWrapper {
+    overflow-x: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #000000 #f0f0f0;
+    cursor: grab;
+    padding-bottom: 10px;
+}
+
+.catalogWrapper:active {
+    cursor: grabbing;
+}
+
+.catalogWrapper::-webkit-scrollbar {
+    height: 6px;
+}
+
+.catalogWrapper::-webkit-scrollbar-track {
+    background: #f0f0f0;
+    border-radius: 3px;
+    margin: 0 20px;
+}
+
+.catalogWrapper::-webkit-scrollbar-thumb {
+    background: #444444;
+    border-radius: 3px;
+}
+
+.catalogWrapper::-webkit-scrollbar-thumb:hover {
+    background: #5a6fd8;
+}
+
+.catalogNav {
+    width: max-content;
+}
+
+.categoryList {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 15px;
+    min-width: min-content;
+}
+
+.categoryItem {
+    flex-shrink: 0;
+}
+
+.categoryLink {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 12px 25px;
+    border: 2px solid #e0e0e0;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    display: block;
+    text-align: center;
+    min-width: 120px;
+    white-space: nowrap;
+    background: white;
+}
+
+.categoryLink:hover {
+    background: #000000;
+    color: white;
+    border-color: rgba(78, 78, 78, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3)
+}
+
+/* Индикаторы скролла */
+.scrollIndicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.scrollHint {
+    font-size: 0.85rem;
+    color: #666;
+    background: #f8f9fa;
+    padding: 5px 15px;
+    border-radius: 15px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 0.7;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Стили для секции товаров */
+.productsSection {
+    margin-bottom: 40px;
+}
+
+.productsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.productCard {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.productCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Бейджи */
+.newBadge,
+.premiumBadge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    z-index: 2;
+}
+
+.newBadge {
+    background: #ff6b6b;
+    color: white;
+}
+
+.premiumBadge {
+    background: gold;
+    color: #333;
+}
+
+/* Изображение товара */
+.productImage {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    /* background: #f8f9fa; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.productImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    border: 4em;
+    border-radius: 18px;
+}
+
+/* .productCard:hover .productImage img {
+  transform: scale(1.05);
+} */
+
+.productBrand {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* Информация о товаре */
+.productInfo {
+    padding: 20px;
+}
+
+.productPrice {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.productName {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+    margin: 0 0 5px 0;
+    line-height: 1.3;
+    height: 4.5rem;
+    line-height: 1.5rem;
+    overflow: hidden;
+}
+
+.productDescription {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 0 0 15px 0;
+    line-height: 1.4;
+}
+
+.chooseButton {
+    width: 100%;
+    background: #000000;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.chooseButton:hover {
+    background: #ffffff;
+    color: #000000;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .body {
+        padding: 15px;
+    }
+
+    .bannerContent {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .bannerTitle {
+        font-size: 1.8rem;
+    }
+
+    .categoryLink {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+        min-width: 100px;
+    }
+
+    .productsGrid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 15px;
+    }
+
+    .productImage {
+        height: 200px;
+    }
+
+    .productInfo {
+        padding: 15px;
+    }
+
+    .scrollHint {
+        font-size: 0.8rem;
+    }
+
+    .catalogContainer::before,
+    .catalogContainer::after {
+        width: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .promotionBanner {
+        padding: 30px 20px;
+    }
+
+    .bannerTitle {
+        font-size: 1.5rem;
+    }
+
+    .catalogContainer {
+        padding: 15px;
+    }
+
+    .productsGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .productImage {
+        height: 180px;
+    }
+
+    .catalogContainer::before,
+    .catalogContainer::after {
+        width: 15px;
+    }
+}

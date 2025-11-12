@@ -1,0 +1,205 @@
+.catalogSection {
+    margin-bottom: 30px;
+}
+
+.catalogContainer {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+}
+
+.catalogContainer::before,
+.catalogContainer::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 30px;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.catalogContainer::before {
+    left: 0;
+    background: linear-gradient(to right, white, transparent);
+}
+
+.catalogContainer::after {
+    right: 0;
+    background: linear-gradient(to left, white, transparent);
+}
+
+.catalogWrapper {
+    overflow-x: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #000000 #f0f0f0;
+    cursor: grab;
+    padding-bottom: 10px;
+}
+
+.catalogWrapper:active {
+    cursor: grabbing;
+}
+
+.catalogWrapper::-webkit-scrollbar {
+    height: 6px;
+}
+
+.catalogWrapper::-webkit-scrollbar-track {
+    background: #f0f0f0;
+    border-radius: 3px;
+    margin: 0 20px;
+}
+
+.catalogWrapper::-webkit-scrollbar-thumb {
+    background: #000000;
+    border-radius: 3px;
+}
+
+.catalogWrapper::-webkit-scrollbar-thumb:hover {
+    background: #000000;
+}
+
+.catalogNav {
+    width: max-content;
+}
+
+.categoryList {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 15px;
+    min-width: min-content;
+}
+
+.categoryItem {
+    flex-shrink: 0;
+}
+
+.categoryLink {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 15px 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    display: block;
+    text-align: center;
+    min-width: 120px;
+    white-space: nowrap;
+    background: white;
+}
+
+.categoryLink:hover {
+    background: #000000;
+    color: white;
+    border-color: #000000;
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(255, 0, 0, 0.3);
+}
+
+.categoryContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.categoryIcon {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.categoryLink:hover .categoryIcon {
+    transform: scale(1.1);
+    /* filter: brightness(0) invert(1); Делает иконку белой при наведении */
+}
+
+.categoryName {
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.scrollIndicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.scrollHint {
+    font-size: 0.85rem;
+    color: #666;
+    background: #f8f9fa;
+    padding: 5px 15px;
+    border-radius: 15px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 0.7;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .categoryLink {
+        padding: 12px 15px;
+        font-size: 0.9rem;
+        min-width: 100px;
+    }
+
+    .categoryIcon {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+    }
+
+    .categoryName {
+        font-size: 0.8rem;
+    }
+
+    .catalogContainer::before,
+    .catalogContainer::after {
+        width: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .catalogContainer {
+        padding: 15px;
+    }
+
+    .categoryLink {
+        padding: 10px 12px;
+        min-width: 90px;
+    }
+
+    .categoryIcon {
+        width: 30px;
+        height: 30px;
+    }
+
+    .categoryName {
+        font-size: 0.75rem;
+    }
+
+    .catalogContainer::before,
+    .catalogContainer::after {
+        width: 15px;
+    }
+}

@@ -1,0 +1,222 @@
+.productsSection {
+  margin-bottom: 40px;
+}
+
+.productsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.productCard {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.productCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Контейнер для бейджей */
+.badgesContainer {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  z-index: 2;
+}
+
+/* Бейджи */
+.hitBadge,
+.saleBadge,
+.newBadge,
+.premiumBadge {
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  white-space: nowrap;
+  width: fit-content;
+}
+
+.hitBadge {
+  background: #ff6b6b;
+  color: white;
+}
+
+.saleBadge {
+  background: #4ecdc4;
+  color: white;
+}
+
+.newBadge {
+  background: #667eea;
+  color: white;
+}
+
+.premiumBadge {
+  background: gold;
+  color: #333;
+}
+
+/* Кнопка лайка */
+.likeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+.likeButton:hover {
+  background: white;
+  transform: scale(1.1);
+}
+
+.likeIcon {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.2s ease;
+}
+
+.likeButton:hover .likeIcon {
+  transform: scale(1.2);
+}
+
+/* Изображение товара */
+.productImage {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  background: #f8f9fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.productImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+
+/* Информация о товаре */
+.productInfo {
+  padding: 20px;
+}
+
+.productPrice {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.productName {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 5px 0;
+  line-height: 1.3;
+  height: 70px;
+}
+
+.productDescription {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0 0 15px 0;
+  line-height: 1.4;
+}
+
+.chooseButton {
+  width: 100%;
+  background: #000000;
+  color: white;
+  border: 2px solid #000000;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.chooseButton:hover {
+  background: #ffffff;
+  color: #000000;
+  border: 2px solid #000000;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .productsGrid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+  }
+
+  .productImage {
+    height: 200px;
+  }
+
+  .productInfo {
+    padding: 15px;
+  }
+
+  .badgesContainer {
+    top: 8px;
+    left: 8px;
+    gap: 4px;
+  }
+
+  .hitBadge,
+  .saleBadge,
+  .newBadge,
+  .premiumBadge {
+    padding: 4px 10px;
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .productsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .productImage {
+    height: 180px;
+  }
+
+  .badgesContainer {
+    top: 6px;
+    left: 6px;
+    gap: 3px;
+  }
+
+  .hitBadge,
+  .saleBadge,
+  .newBadge,
+  .premiumBadge {
+    padding: 3px 8px;
+    font-size: 0.7rem;
+  }
+}
