@@ -1,12 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import style from "./style.module.css";
-
-const Search = ({ onSearch, productsCount }) => {
-    const [searchQuery, setSearchQuery] = useState("");
-    const [isSearchOpen, setIsSearchOpen] = useState(false);
-    const searchRef = useRef(null);
-
-    const popularSearches = [
+ const popularSearches = [
         "футболка",
         "свитшот",
         "сертификат",
@@ -18,6 +12,12 @@ const Search = ({ onSearch, productsCount }) => {
         "шапка",
         "брелок"
     ];
+const Search = ({ onSearch, productsCount }) => {
+    const [searchQuery, setSearchQuery] = useState("");
+    const [isSearchOpen, setIsSearchOpen] = useState(false);
+    const searchRef = useRef(null);
+
+   
 
     const handleSearchChange = (e) => {
         const value = e.target.value;

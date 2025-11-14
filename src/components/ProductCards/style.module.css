@@ -96,9 +96,9 @@
   transition: transform 0.2s ease;
 }
 
-.likeButton:hover .likeIcon {
+/* .likeButton:hover .likeIcon {
   transform: scale(1.2);
-}
+} */
 
 /* Изображение товара */
 .productImage {
@@ -168,55 +168,151 @@
 }
 
 /* Адаптивность */
-@media (max-width: 768px) {
-  .productsGrid {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 15px;
-  }
-
-  .productImage {
-    height: 200px;
-  }
-
-  .productInfo {
-    padding: 15px;
-  }
-
-  .badgesContainer {
-    top: 8px;
-    left: 8px;
-    gap: 4px;
-  }
-
-  .hitBadge,
-  .saleBadge,
-  .newBadge,
-  .premiumBadge {
-    padding: 4px 10px;
-    font-size: 0.75rem;
-  }
+/* Адаптивность для планшетов */
+@media (max-width: 1024px) {
+    .productsGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+    
+    .productImage {
+        height: 478px;
+    }
+    
+    .productInfo {
+        padding: 10px;
+    }
+    
+    .productPrice {
+        font-size: 1rem;
+    }
+    
+    .productName {
+        font-size: 0.85rem;
+    }
 }
 
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    .productsGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    
+    .productImage {
+        height: 300px;
+    }
+    
+    .productInfo {
+        padding: 8px;
+    }
+    
+    .productPrice {
+        font-size: 0.95rem;
+    }
+    
+    .productName {
+        font-size: 0.8rem;
+        min-height: 2.4em;
+    }
+    
+    .chooseButton {
+        padding: 8px;
+        font-size: 0.85rem;
+    }
+    
+    .badgesContainer {
+        top: 6px;
+        left: 6px;
+        gap: 3px;
+    }
+    
+    .hitBadge,
+    .saleBadge,
+    .newBadge,
+    .premiumBadge {
+        padding: 3px 8px;
+        font-size: 0.65rem;
+    }
+    
+    .likeButton {
+        width: 28px;
+        height: 28px;
+        top: 6px;
+        right: 6px;
+    }
+    
+    .likeIcon {
+        width: 14px;
+        height: 14px;
+    }
+}
+
+/* Для очень маленьких экранов */
 @media (max-width: 480px) {
-  .productsGrid {
-    grid-template-columns: 1fr;
-  }
+    .productsGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+    
+    .productImage {
+        height: 160px;
+    }
+    
+    .productInfo {
+        padding: 6px;
+    }
+    
+    .productPrice {
+        font-size: 0.9rem;
+        margin-bottom: 4px;
+    }
+    
+    .productName {
+        font-size: 0.75rem;
+        min-height: 2.2em;
+        margin-bottom: 2px;
+    }
+    
+    .chooseButton {
+        padding: 6px;
+        font-size: 0.8rem;
+    }
+    
+    .badgesContainer {
+        top: 4px;
+        left: 4px;
+        gap: 2px;
+    }
+    
+    .hitBadge,
+    .saleBadge,
+    .newBadge,
+    .premiumBadge {
+        padding: 2px 6px;
+        font-size: 0.6rem;
+    }
+    
+    .likeButton {
+        width: 24px;
+        height: 24px;
+        top: 4px;
+        right: 4px;
+    }
+    
+    .likeIcon {
+        width: 12px;
+        height: 12px;
+    }
+}
 
-  .productImage {
-    height: 180px;
-  }
-
-  .badgesContainer {
-    top: 6px;
-    left: 6px;
-    gap: 3px;
-  }
-
-  .hitBadge,
-  .saleBadge,
-  .newBadge,
-  .premiumBadge {
-    padding: 3px 8px;
-    font-size: 0.7rem;
-  }
+/* Для горизонтальной ориентации на мобильных */
+@media (max-width: 768px) and (orientation: landscape) {
+    .productsGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .productImage {
+        height: 120px;
+    }
 }

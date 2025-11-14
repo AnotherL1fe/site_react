@@ -25,7 +25,7 @@
 
 .searchInput:focus {
     outline: none;
-    border-color: #667eea;
+    border-color: #000000;
     box-shadow: 0 4px 15px rgba(102, 126, 234, 0.2);
 }
 
@@ -186,7 +186,7 @@
 @media (max-width: 768px) {
     .searchContainer {
         max-width: 100%;
-        padding: 0 15px;
+        padding: 0px;
     }
 
     .searchInput {

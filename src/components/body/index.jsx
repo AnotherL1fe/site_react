@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import ProductCards from "../ProductCards";
 import PromotionBanner from "../PromotionBanner";
-import ScrollCatalog from "../ScrollCatalog";
+import ScrollCatalog from "../scrollCatalog";
 import Search from "../Search";
 import style from "./style.module.css";
 
@@ -73,12 +73,12 @@ const Body = () => {
     product.price.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
-  const handleWheel = (e) => {
-    if (catalogRef.current) {
-      e.preventDefault();
-      catalogRef.current.scrollLeft += e.deltaY;
-    }
-  };
+  // const handleWheel = (e) => {
+  //   if (catalogRef.current) {
+  //     e.preventDefault();
+  //     catalogRef.current.scrollLeft += e.deltaY;
+  //   }
+  // };
 
   const handleSearch = (query) => {
     setSearchQuery(query);

@@ -1,24 +1,33 @@
-import { useState } from "react";
 import style from "./style.module.css";
 
-import tgIcon from "../../assets/telegram-icon.png";
+import homeIcon from "../../assets/home.png";
+import catalogIcon from "../../assets/catalog.png";
+import favoriteIcon from "../../assets/favorite.png";
+import cartIcon from "../../assets/cart.png";
+import profileIcon from "../../assets/profile.png";
 
-
-const Header = () => {
+const Footer = () => {
     return (
-        <header className={style.header}>
-            <div className={style.headerContent}>
-                {/* Центральная - кнопка телеграм */}
-                <div className={style.rightSection}>
-                    <button className={style.tgButton}>
-                        {/* Иконка телеграма */}
-                        <img src={tgIcon} alt="Telegram" className={style.tgIcon} />
-                        <span className={style.tgText}>наш tg-канал</span>
-                    </button>
-                </div>
+        <footer className={style.footer}>
+            <div className={style.footerContent}>
+                <button className={style.footerButton}>
+                    <img src={homeIcon} alt="Главная" className={style.buttonIcon} />
+                </button>
+                <button className={style.footerButton}>
+                    <img src={catalogIcon} alt="Каталог" className={style.buttonIcon} />
+                </button>
+                <button className={style.footerButton}>
+                    <img src={favoriteIcon} alt="Избранное" className={style.buttonIcon} />
+                </button>
+                <button className={style.footerButton}>
+                    <img src={cartIcon} alt="Корзина" className={style.buttonIcon} />
+                </button>
+                <button className={style.footerButton}>
+                    <img src={profileIcon} alt="Профиль" className={style.buttonIcon} />
+                </button>
             </div>
-        </header>
+        </footer>
     );
 };
 
-export default Header;
+export default Footer;
