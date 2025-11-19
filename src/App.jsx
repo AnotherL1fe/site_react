@@ -1,27 +1,34 @@
-//import { useState } from 'react'
+import { useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Body from "./components/main";
+import Footer from "./components/header";
+import Catalog from "./components/pages/catalog";
+import Favorites from "./components/pages/favorites";
+import Cart from "./components/pages/cart";
+import Profile from "./components/pages/profile";
+import "./App.css";
 
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+function App() {
+  const [searchQuery, setSearchQuery] = useState("");
 
-
-import Header from './components/header/index.jsx'
-
-// import Search from './components/Search/index.jsx'
-
-import Body from './components/body/index.jsx'
-
-
-const App = () => {
+  const handleSearch = (query) => {
+    setSearchQuery(query);
+  };
 
   return (
-    <>
-      <Header />
-      {/* <Search /> */}
-      <Body />
-    </>
-  )
-
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<Body searchQuery={searchQuery} />} />
+          <Route path="/catalog" element={<Catalog />} />
+          <Route path="/favorites" element={<Favorites />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/profile" element={<Profile />} />
+        </Routes>
+        <Footer />
+      </div>
+    </Router>
+  );
 }
 
-export default App
+export default App;
