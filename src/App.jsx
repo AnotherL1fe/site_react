@@ -2,10 +2,10 @@ import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Body from "./components/main";
 import Footer from "./components/header";
-import Catalog from "./components/pages/catalog";
-import Favorites from "./components/pages/favorites";
-import Cart from "./components/pages/cart";
-import Profile from "./components/pages/profile";
+import Catalog from "./components/header/pages/catalog";
+import Favorites from "./components/header/pages/favorites";
+import Cart from "./components/header/pages/cart";
+import Profile from "./components/header/pages/profile";
 import "./App.css";
 
 function App() {
