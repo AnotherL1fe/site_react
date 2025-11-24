@@ -12,62 +12,62 @@ import card4 from "../../assets/4card.png";
 import card5 from "../../assets/5card.png";
 import card6 from "../../assets/6card.png";
 
-  const allProducts = [
-    {
-      brand: "ХИТ",
-      premium: false,
-      price: "2 800 ₽",
-      name: "Футболка мужская Комары",
-      isNew: false,
-      image: card1,
-      id: 1
-    },
-    {
-      brand: "",
-      premium: false,
-      price: "2 700 ₽",
-      name: "Свитшот женский укороченный Yamal est.2017",
-      isNew: false,
-      image: card2,
-      id: 2
-    },
-    {
-      brand: "SALE",
-      premium: false,
-      price: "1 550 ₽",
-      name: "Шапка Yamal комбинация с бумбономапша",
-      isNew: true,
-      image: card3,
-      id: 3
-    },
-    {
-      brand: "SALE",
-      premium: false,
-      price: "640 ₽",
-      name: "Брелок фирменный «Созвездие»",
-      isNew: false,
-      image: card4,
-      id: 4
-    },
-    {
-      brand: "",
-      premium: false,
-      price: "3 850 ₽",
-      name: "Шорты мужские Yamal",
-      isNew: true,
-      image: card5,
-      id: 5
-    },
-    {
-      brand: "",
-      premium: true,
-      price: "10 000 ₽",
-      name: "Сертификат Yamal 10000",
-      isNew: false,
-      image: card6,
-      id: 6
-    }
-  ];
+const allProducts = [
+  {
+    brand: "ХИТ",
+    premium: false,
+    price: "2 800 ₽",
+    name: "Футболка мужская Комары",
+    isNew: false,
+    image: card1,
+    id: 1
+  },
+  {
+    brand: "",
+    premium: false,
+    price: "2 700 ₽",
+    name: "Свитшот женский укороченный Yamal est.2017",
+    isNew: false,
+    image: card2,
+    id: 2
+  },
+  {
+    brand: "SALE",
+    premium: false,
+    price: "1 550 ₽",
+    name: "Шапка Yamal комбинация с бумбономапша",
+    isNew: true,
+    image: card3,
+    id: 3
+  },
+  {
+    brand: "SALE",
+    premium: false,
+    price: "640 ₽",
+    name: "Брелок фирменный «Созвездие»",
+    isNew: false,
+    image: card4,
+    id: 4
+  },
+  {
+    brand: "",
+    premium: false,
+    price: "3 850 ₽",
+    name: "Шорты мужские Yamal",
+    isNew: true,
+    image: card5,
+    id: 5
+  },
+  {
+    brand: "",
+    premium: true,
+    price: "10 000 ₽",
+    name: "Сертификат Yamal 10000",
+    isNew: false,
+    image: card6,
+    id: 6
+  }
+];
 
 const Body = () => {
   const catalogRef = useRef(null);

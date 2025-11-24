@@ -38,7 +38,8 @@ const ProductCards = ({ products }) => {
         const originalText = button.textContent;
         
         button.textContent = 'Добавлено!';
-        button.style.background = '#4CAF50';
+        button.style.background = '#4CAF50'
+        button.style.color = '#ffffffff';
         button.disabled = true;
         
         setTimeout(() => {
