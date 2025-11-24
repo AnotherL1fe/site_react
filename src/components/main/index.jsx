@@ -12,10 +12,6 @@ import card4 from "../../assets/4card.png";
 import card5 from "../../assets/5card.png";
 import card6 from "../../assets/6card.png";
 
-const Body = () => {
-  const catalogRef = useRef(null);
-  const [searchQuery, setSearchQuery] = useState("");
-
   const allProducts = [
     {
       brand: "ХИТ",
@@ -23,7 +19,8 @@ const Body = () => {
       price: "2 800 ₽",
       name: "Футболка мужская Комары",
       isNew: false,
-      image: card1
+      image: card1,
+      id: 1
     },
     {
       brand: "",
@@ -31,7 +28,8 @@ const Body = () => {
       price: "2 700 ₽",
       name: "Свитшот женский укороченный Yamal est.2017",
       isNew: false,
-      image: card2
+      image: card2,
+      id: 2
     },
     {
       brand: "SALE",
@@ -39,7 +37,8 @@ const Body = () => {
       price: "1 550 ₽",
       name: "Шапка Yamal комбинация с бумбономапша",
       isNew: true,
-      image: card3
+      image: card3,
+      id: 3
     },
     {
       brand: "SALE",
@@ -47,7 +46,8 @@ const Body = () => {
       price: "640 ₽",
       name: "Брелок фирменный «Созвездие»",
       isNew: false,
-      image: card4
+      image: card4,
+      id: 4
     },
     {
       brand: "",
@@ -55,7 +55,8 @@ const Body = () => {
       price: "3 850 ₽",
       name: "Шорты мужские Yamal",
       isNew: true,
-      image: card5
+      image: card5,
+      id: 5
     },
     {
       brand: "",
@@ -63,9 +64,14 @@ const Body = () => {
       price: "10 000 ₽",
       name: "Сертификат Yamal 10000",
       isNew: false,
-      image: card6
+      image: card6,
+      id: 6
     }
   ];
+
+const Body = () => {
+  const catalogRef = useRef(null);
+  const [searchQuery, setSearchQuery] = useState("");
 
   const filteredProducts = allProducts.filter(product =>
     product.name.toLowerCase().includes(searchQuery.toLowerCase()) ||

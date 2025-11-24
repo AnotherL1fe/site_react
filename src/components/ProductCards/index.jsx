@@ -27,25 +27,25 @@ const ProductCards = ({ products }) => {
         event.preventDefault();
         event.stopPropagation();
         
-        const productWithId = {
-            ...product,
-            id: product.id || `product-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`
-        };
+        // const productWithId = {
+        //     ...product,
+        //     id: product.id || 
+        // };
         
-        addToCart(productWithId);
+        addToCart(product);
         
-        // const button = event.target;
-        // const originalText = button.textContent;
+        const button = event.target;
+        const originalText = button.textContent;
         
-        // button.textContent = 'Добавлено!';
-        // button.style.background = '#4CAF50';
-        // button.disabled = true;
+        button.textContent = 'Добавлено!';
+        button.style.background = '#4CAF50';
+        button.disabled = true;
         
-        // setTimeout(() => {
-        //     button.textContent = originalText;
-        //     button.style.background = '#000000';
-        //     button.disabled = false;
-        // }, 1500);
+        setTimeout(() => {
+            button.textContent = originalText;
+            button.style.background = '#000000';
+            button.disabled = false;
+        }, 1500);
     };
 
     return (

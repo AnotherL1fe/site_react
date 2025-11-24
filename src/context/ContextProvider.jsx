@@ -19,6 +19,10 @@ export const CartProvider = ({children}) => {
         const addToCart = (product) => {
             setCartItems(prev => {
                 const existingItem = prev.find(item => item.id === product.id);
+                console.log("-----------------------");
+                
+                console.log(existingItem);
+                
                 if (existingItem) {
                     return prev.map(item =>
                         item.id === product.id
@@ -26,6 +30,8 @@ export const CartProvider = ({children}) => {
                             : item
                     );
                 }
+                console.log([...prev, { ...product, quantity: 1 }]);
+                
                 return [...prev, { ...product, quantity: 1 }];
             });
         };
