@@ -26,12 +26,6 @@ const ProductCards = ({ products }) => {
     const handleAddToCart = (product, event) => {
         event.preventDefault();
         event.stopPropagation();
-        
-        // const productWithId = {
-        //     ...product,
-        //     id: product.id || 
-        // };
-        
         addToCart(product);
         
         const button = event.target;
