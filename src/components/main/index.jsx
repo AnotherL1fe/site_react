@@ -36,7 +36,6 @@ const Body = () => {
   useEffect(()=>{
     async function fetchData() {
       const products = await getProducts()
-      console.log(products);
       
       setAllProducts(products)
     }
