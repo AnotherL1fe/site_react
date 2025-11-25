@@ -159,7 +159,7 @@
     transition: all 0.3s ease;
     display: block;
     text-align: center;
-    min-width: 120px;
+    min-width: 180px;
     white-space: nowrap;
     background: white;
 }
@@ -395,7 +395,7 @@
     }
 
     .productImage {
-        height: 180px;
+        height: 500px;
     }
 
     .catalogContainer::before,

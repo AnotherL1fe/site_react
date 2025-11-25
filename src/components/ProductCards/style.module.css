@@ -109,7 +109,7 @@
 .productImage {
   position: relative;
   width: 100%;
-  height: 180px;
+  height: 500px;
   background: #f8f9fa;
   display: flex;
   align-items: center;
@@ -308,7 +308,7 @@
   }
 
   .productImage {
-    height: 120px;
+    height: 180px;
   }
 
   .productInfo {

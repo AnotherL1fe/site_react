@@ -5,7 +5,6 @@
   padding: 20px;
 }
 
-/* Стили для промо-баннера */
 .promotionBanner {
   background: linear-gradient(135deg, #000000 30%, #ffffff 100%);
   color: white;
@@ -65,7 +64,6 @@
   box-shadow: 0 6px 15px rgba(255, 107, 107, 0.4);
 }
 
-/* Стили для скроллируемого каталога */
 .catalogSection {
   margin-bottom: 40px;
 }
@@ -159,7 +157,7 @@
   transition: all 0.3s ease;
   display: block;
   text-align: center;
-  min-width: 120px;
+  min-width: 180px;
   white-space: nowrap;
   background: white;
 }
@@ -172,7 +170,6 @@
   box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3)
 }
 
-/* Индикаторы скролла */
 .scrollIndicators {
   display: flex;
   justify-content: center;
@@ -395,7 +392,7 @@
   }
 
   .productImage {
-    height: 180px;
+    height: 500px;
   }
 
   .catalogContainer::before,
