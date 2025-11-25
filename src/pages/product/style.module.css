@@ -1,0 +1,533 @@
+.productPage {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.breadcrumbs {
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.breadcrumbs a {
+    color: #666;
+    text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+    color: #000;
+}
+
+.currentProduct {
+    color: #000;
+    font-weight: 600;
+}
+
+.backButton {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: none;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    padding: 10px 0;
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+.backButton:hover {
+    color: #000;
+}
+
+.backButton img {
+    width: 16px;
+    height: 16px;
+}
+
+.productContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.imageGallery {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.mainImage {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    background: #f8f9fa;
+    aspect-ratio: 1;
+}
+
+.mainImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.badges {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.hitBadge,
+.saleBadge,
+.newBadge,
+.premiumBadge,
+.discountBadge {
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: white;
+    width: fit-content;
+}
+
+.hitBadge {
+    background: #ff6b6b;
+}
+
+.saleBadge {
+    background: #4ecdc4;
+}
+
+.newBadge {
+    background: #667eea;
+}
+
+.premiumBadge {
+    background: gold;
+    color: #333;
+}
+
+.discountBadge {
+    background: #ff4444;
+}
+
+.thumbnailList {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+.thumbnail {
+    width: 80px;
+    height: 80px;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    background: #f8f9fa;
+    flex-shrink: 0;
+}
+
+.thumbnail.active {
+    border-color: #000;
+}
+
+.thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.productInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.productTitle {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #333;
+    margin: 0;
+    line-height: 1.3;
+    flex: 1;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+}
+
+.likeButton,
+.shareButton {
+    width: 44px;
+    height: 44px;
+    border: 2px solid #e0e0e0;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.likeButton:hover,
+.shareButton:hover {
+    border-color: #000;
+    transform: scale(1.05);
+}
+
+.likeButton img,
+.shareButton img {
+    width: 20px;
+    height: 20px;
+}
+
+.priceSection {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.currentPrice {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #000;
+}
+
+.originalPrice {
+    font-size: 1.3rem;
+    color: #999;
+    text-decoration: line-through;
+}
+
+.description {
+    color: #666;
+    line-height: 1.6;
+    font-size: 1.1rem;
+}
+
+.sizeSection,
+.colorSection,
+.quantitySection {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.sizeSection h3,
+.colorSection h3,
+.quantitySection h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.sizeOptions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.sizeOption {
+    padding: 12px 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    background: white;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    min-width: 60px;
+    text-align: center;
+}
+
+.sizeOption:hover {
+    border-color: #000;
+}
+
+.sizeOption.selected {
+    background: #000;
+    color: white;
+    border-color: #000;
+}
+
+.colorOptions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.colorOption {
+    padding: 12px 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    background: white;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.colorOption:hover {
+    border-color: #000;
+}
+
+.colorOption.selected {
+    background: #000;
+    color: white;
+    border-color: #000;
+}
+
+.quantityControls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 5px;
+    width: fit-content;
+}
+
+.quantityButton {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: #f8f9fa;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.quantityButton:hover {
+    background: #e9ecef;
+}
+
+.quantity {
+    font-size: 1.2rem;
+    font-weight: 600;
+    min-width: 40px;
+    text-align: center;
+}
+
+.actionButtons {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.addToCartButton,
+.buyNowButton {
+    flex: 1;
+    padding: 18px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.addToCartButton {
+    background: #000;
+    color: white;
+}
+
+.addToCartButton:hover {
+    background: #333;
+}
+
+.addToCartButton.inCart {
+    background: #4CAF50;
+}
+
+.buyNowButton {
+    background: #ff6b6b;
+    color: white;
+}
+
+.buyNowButton:hover {
+    background: #ff5252;
+}
+
+.addToCartButton:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+.deliveryInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 12px;
+}
+
+.deliveryItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.deliveryItem strong {
+    color: #333;
+}
+
+.deliveryItem span {
+    color: #666;
+}
+
+.additionalInfo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    padding-top: 40px;
+    border-top: 2px solid #f0f0f0;
+}
+
+.features h3,
+.descriptionFull h3 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.features ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.features li {
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f0f0;
+    color: #666;
+}
+
+.features li:last-child {
+    border-bottom: none;
+}
+
+.descriptionFull p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.loading,
+.notFound {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.loadingSpinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #000;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 20px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.notFound h2 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.notFound p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Адаптивность */
+@media (max-width: 968px) {
+    .productContainer {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .additionalInfo {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .productPage {
+        padding: 15px;
+    }
+    
+    .productTitle {
+        font-size: 1.5rem;
+    }
+    
+    .currentPrice {
+        font-size: 1.7rem;
+    }
+    
+    .actionButtons {
+        flex-direction: column;
+    }
+    
+    .header {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .actions {
+        align-self: flex-end;
+    }
+}
+
+@media (max-width: 480px) {
+    .productPage {
+        padding: 10px;
+    }
+    
+    .productTitle {
+        font-size: 1.3rem;
+    }
+    
+    .currentPrice {
+        font-size: 1.5rem;
+    }
+    
+    .sizeOptions,
+    .colorOptions {
+        justify-content: center;
+    }
+    
+    .thumbnail {
+        width: 60px;
+        height: 60px;
+    }
+}

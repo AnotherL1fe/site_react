@@ -6,6 +6,7 @@ import Catalog from "./pages/catalog";
 import Favorites from "./pages/favorites";
 import Cart from "./pages/cart";
 import Profile from "./pages/profile";
+import Product from "./pages/product";
 import "./App.css";
 import { CartProvider } from "./context/ContextProvider";
 function App() {
@@ -18,18 +19,19 @@ function App() {
   return (
     <CartProvider>
       <Router>
-      <div className="App">
-        <Routes>
-          <Route path="/" element={<Body searchQuery={searchQuery} />} />
-          <Route path="/catalog" element={<Catalog />} />
-          <Route path="/favorites" element={<Favorites />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/profile" element={<Profile />} />
-        </Routes>
-        <Footer />
-      </div>
-    </Router>
-      </CartProvider>
+        <div className="App">
+          <Routes>
+            <Route path="/" element={<Body searchQuery={searchQuery} />} />
+            <Route path="/catalog" element={<Catalog />} />
+            <Route path="/favorites" element={<Favorites />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/product/:id" element={<Product />} />
+          </Routes>
+          <Footer />
+        </div>
+      </Router>
+    </CartProvider>
   );
 }
 
