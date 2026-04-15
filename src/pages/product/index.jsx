@@ -18,7 +18,6 @@ import card6 from "../../assets/products/6card.png";
 import { getProductById } from "../../api/products";
 
 
-
 const Product = () => {
     const { id } = useParams();
     const navigate = useNavigate();
