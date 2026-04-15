@@ -5,8 +5,7 @@ import card3 from "../assets/products/3card.png";
 import card4 from "../assets/products/4card.png";
 import card5 from "../assets/products/5card.png";
 import card6 from "../assets/products/6card.png";
-import card7 from "../assets/products/7card.jpg";
-import card8 from "../assets/products/8card.jpg";
+
 const mockProducts = {
     1: {
         id: 1,
@@ -122,25 +121,6 @@ const mockProducts = {
         care: "Хранить в сухом месте",
         delivery: "Мгновенно"
     },
-    7: {
-        id: 7,
-        brand: "",
-        premium: true,
-        price: "100 000 ₽",
-        name: "Трусы Пашка",
-        description: "Легендарные Superma трусы. Дарит свободу.",
-        isNew: false,
-        image: card7,
-        images: [card7],
-        sizes: ["S", "M", "L", "XL"],
-        colors: ["Черный", "Синий", "Зеленый", "Серый", "Леопардовый"],
-        features: ["Дышащий материал", "Эластичная резинка", "Карманы", "Быстросохнущий", "Комфортная посадка"],
-        category: "Трусы",
-        inStock: true,
-        material: "Металл с покрытием",
-        care: "Хранить в туалете",
-        delivery: "Мгновенно"
-    }
 };
 
 
